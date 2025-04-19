@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/604pierce/ratgdo-exporter/internal/collector"
+	"github.com/604bpierce/ratgdo-exporter/internal/collector"
 
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"

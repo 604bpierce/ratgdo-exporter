@@ -3,7 +3,7 @@ package collector
 import (
 	"log"
 
-	"github.com/604pierce/ratgdo-exporter/internal/client"
+	"github.com/604bpierce/ratgdo-exporter/internal/client"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

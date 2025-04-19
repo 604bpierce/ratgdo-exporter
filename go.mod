@@ -1,4 +1,4 @@
-module github.com/604pierce/ratgdo-exporter
+module github.com/604bpierce/ratgdo-exporter
 
 go 1.24.2
 
