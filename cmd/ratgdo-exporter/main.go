@@ -28,11 +28,13 @@ func main() {
 	port := flag.String("metrics-port", defaultPort, "Port to expose the metrics page. default is 9100")
 	flag.Parse()
 
+	reg := prometheus.NewRegistry()
+
 	collector := collector.NewCollector(*host)
-	prometheus.MustRegister(collector)
+	reg.MustRegister(collector)
 
 	// Expose /metrics
-	http.Handle("/metrics", promhttp.Handler())
+	http.Handle("/metrics", promhttp.HandlerFor(reg, promhttp.HandlerOpts{}))
 
 	log.Printf("Exporter is listening on :%s/metrics\n", *port)
 	log.Fatal(http.ListenAndServe(":"+*port, nil))
